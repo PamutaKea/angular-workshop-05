@@ -37,13 +37,11 @@
         </thead>
         <tbody *ngIf="products.length > 0">
           <tr *ngFor="let product of products | product: filterData">
-            <th>
-              XXX
-            </th>
-            <th>{{ product.code }}</th>
+            <th>{{ product.imageUrl }}</th>
+            <th [routerLink]="['/detail', product.code]">{{ product.code }}</th>
             <th>{{ product.name | uppercase | productName }}</th>
             <th>{{ product.price | number: "1.2-2" }}</th>
-            <th>Yes</th>
+            <th>{{ product.available }}</th>
             <th>
               <app-rating
                 [rating]="product.rating"

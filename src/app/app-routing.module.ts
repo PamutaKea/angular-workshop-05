@@ -1,3 +1,4 @@
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { AuthGuard } from './auth.guard';
 import { ProductListComponent } from './product-list/product-list.component';
 import { LoginComponent } from './login/login.component';
@@ -11,6 +12,10 @@ const routes: Routes = [
     path: 'list/:name',
     component: ProductListComponent,
     canActivate: [AuthGuard],
+  },
+  {
+    path: 'detail/:pageid',
+    component: ProductDetailComponent,
   },
 ];
 
